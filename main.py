@@ -17,6 +17,16 @@ def main():
     admin_config.REBROADCAST_NIP89 = False
     admin_config.UPDATE_PROFILE = False
     admin_config.LUD16 = dvm_config.LN_ADDRESS
+    dvm_config.RELAY_LIST.append("wss://nostr-pub.wellorder.net")
+    dvm_config.RELAY_LIST.append("wss://relay.damus.io")
+    dvm_config.RELAY_LIST.append("wss://nos.lol")
+    dvm_config.RELAY_LIST.append("wss://relay.primal.net")
+    dvm_config.RELAY_LIST.append("wss://offchain.pub")
+    dvm_config.RELAY_LIST.append("wss://nostr.mom")
+    dvm_config.RELAY_LIST.append("wss://relay.nostr.bg")
+    dvm_config.RELAY_LIST.append("wss://nostr.oxtr.dev")
+    dvm_config.RELAY_LIST.append("wss://nostr-relay.nokotaro.com")
+    dvm_config.RELAY_LIST.append("wss://relay.nostr.wirednet.jp")
     dvm_config.FIX_COST = 5
 
     options = {'default_model': "ollama/llama2", 'server': "http://localhost:11434"}
@@ -27,7 +37,6 @@ def main():
         "about": "I always respond with 'Hello World'",
         "encryptionSupported": True,
         "cashuAccepted": True,
-
         "nip90Params": {
 
         }
@@ -40,7 +49,8 @@ def main():
     ollama = TextGenerationLLMLite(name=name, dvm_config=dvm_config, nip89config=nip89config, admin_config=admin_config,
                                    options=options)
 
-    async def process(self, request_form):
+    async def process(request_form):
+        print("inside process() function and request_form is: ", request_form)
         return "Hello World"
 
     ollama.process = process
