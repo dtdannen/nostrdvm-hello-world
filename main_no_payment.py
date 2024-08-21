@@ -9,7 +9,7 @@ from nostr_dvm.utils.nip89_utils import NIP89Config, check_and_set_d_tag
 
 
 def main():
-    identifier = "llama2"
+    identifier = "DustinHelloWorldDVM"
     name = "HelloWorld"
 
     dvm_config = build_default_config(identifier)
@@ -27,7 +27,7 @@ def main():
     dvm_config.RELAY_LIST.append("wss://nostr.oxtr.dev")
     dvm_config.RELAY_LIST.append("wss://nostr-relay.nokotaro.com")
     dvm_config.RELAY_LIST.append("wss://relay.nostr.wirednet.jp")
-    dvm_config.FIX_COST = 5
+    dvm_config.FIX_COST = 0
 
     options = {'default_model': "ollama/llama2", 'server': "http://localhost:11434"}
 
@@ -35,8 +35,6 @@ def main():
         "name": name,
         "image": "https://image.nostr.build/32fb2f53cbbb011d71a43c793a37922674b5214ff55824031b9bcdc7702498ae.jpg",
         "about": "I always respond with 'Hello World'",
-        "encryptionSupported": True,
-        "cashuAccepted": True,
         "nip90Params": {
 
         }
