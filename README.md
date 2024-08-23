@@ -12,16 +12,22 @@ python3.12 -m venv venv
 ```commandline
 source venv/bin/activate
 ```
-4. Rename the DVM to something you'd like by changing the "DustinHelloWorldDVM" string
+
+4. Install nostrdvm
+```commandline
+pip install nostr-dvm
+```
+
+5. Rename the DVM to something you'd like by changing the "DustinHelloWorldDVM" string
 ![name_of_free_dvm.png](docs%2Fname_of_free_dvm.png)
 
-5. Run the DVM that does not require payment
+6. Run the DVM that does not require payment
 ```commandline
 python main_no_payment.py
 ```
 
-6. Navigate to https://dvmdash.live/playground
-7. Submit a message and watch the DVMs respond
+7. Navigate to https://dvmdash.live/playground
+8. Submit a message and watch the DVMs respond
 
 ## To get started:
 - Install Python 3.12
